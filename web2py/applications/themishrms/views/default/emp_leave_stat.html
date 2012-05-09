@@ -1,0 +1,49 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+<div id="econtent">
+<h4>Leave Status</h4>
+</div>
+<br>
+<div id="econtent">
+<center>
+<form name="theform" method="post">
+
+<table width="800px">
+        <tr >
+            <th width="50px">EMPLOYEE CODE</th>
+            <th width="150px">EMAIL</th>
+            <th width="100px">NAME</th>
+            <th width="50px">LEAVE TYPE</th>
+            <th width="50px">FROM LEAVE</th>
+            <th width="50px">TO LEAVE</th>
+            <th width="50px">TOTAL DAY</th>
+            <th width="50px">REASON FOR LEAVE</th>
+            <th width="50px">REPORTING MANAGER</th>
+            <th width="50px">APPROVED BY</th>
+            <th width="50px">STATUS</th>
+        </tr>
+    </table>
+    
+	<div >
+        <table width="800px">
+            {{for eleave in empleave:}}
+            <tr>
+                <td width="50px"><a href="{{=URL('default','emp_edit_leave',args=eleave.id)}}">{{=eleave.employee_code}}</a></td>
+                <td width="150px">{{=eleave.email}}</td>
+                <td width="100px">{{=eleave.name}}</td>
+                <td width="50px">{{=eleave.leave_type}}</td>
+                <td width="50px">{{=eleave.from_leave}}</td>
+                <td width="50px">{{=eleave.to_leave}}</td>
+                <td width="50px">{{=eleave.total_day}}</td>
+                <td width="50px">{{=eleave.reason_for_leave}}</td>
+                <td width="50px">{{=eleave.reporting_manager}}</td>
+                <td width="50px">{{=eleave.approved_by}}</td>
+                <td width="50px">{{=eleave.status}}</td>
+            </tr>
+            {{pass}}
+        </table>
+
+</form> 
+</center>
+
+</div>

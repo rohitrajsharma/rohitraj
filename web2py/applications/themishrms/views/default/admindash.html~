@@ -1,0 +1,24 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,False}}
+{{extend 'adminlayout.html'}}
+<div id="contdoc">
+<h4>DASHBOARD</h4>
+</div>
+<center>
+<div id="contdoc">
+	<div class="compliance">
+	<center><h3>In Themis</h3></center>
+	</div>
+	<div class="anu">
+	<center><h3>Birthday Buddies</h3></center>
+	</div>
+	<div class="eproject">
+	<center><h3>Announcement</h3></center>
+	</div>
+	<div class="actively">
+	<center><h3>Complaint Desk</h3></center>
+	</div>
+	<div class="rssfeed">
+	<center><h3>New Hires</h3></center>
+	</div>
+</div>
+</center>

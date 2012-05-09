@@ -1,0 +1,42 @@
+.readteam .readteamcontent{ 
+color:#767778;
+background:none; 
+margin-top:-12px;
+}
+
+.readteam .readteamtab{ 
+margin-right: 20px;
+font: normal 12px Arial;
+}
+
+.readteam .readteamtab a{
+float: right;
+color: black;
+background:#cacbcd no-repeat left bottom;
+text-decoration:none;
+letter-spacing: 1px;
+}
+
+.readteam .readteamtab a span{ 
+float: left;
+display: block;
+padding: 1px 12px 4px 13px;
+cursor: pointer;
+}
+
+.readteam .readteamtab { 
+margin-top: 2px;
+margin-left: 5px;
+}
+
+.readteam .readteamtab a:hover{ 
+background-color:none;
+}
+
+.readteam .readteamtab a:active, .readteam .readteamtab a:focus{
+outline: 0;
+}
+
+.readteam .readteamtab a:hover span{
+background-color: transparent;
+}

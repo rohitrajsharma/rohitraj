@@ -1,0 +1,24 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+<div id="contdoc">
+<h4>Apply for Leave</h4>
+</div>
+<div id="econtent">
+<div class="paneltop">
+<br><br>
+<center>
+	<form>
+		<select>
+  			<option>Casual Leave</option>
+  			<option>Medical Leave</option>
+  			<option>Vacation Leave</option>
+	</select> <br><br>
+	Form Leave: <input type="text" name="Form Leave" />
+	To Leave: <input type="text" name="To Leave" /><br><br>
+	Total Leave Day    : <input type="text" name="Total Leave Day" /><br><br>
+	Reason of Leave    : <input type="text" name="Reason of Leave" /><br><br>
+	Reporting Manager: <input type="text" name="Reporting Manager" /><br>
+	</form>
+</center>
+</div> 
+</div>

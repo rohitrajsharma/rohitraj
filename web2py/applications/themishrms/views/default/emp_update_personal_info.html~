@@ -1,0 +1,11 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+<div id="contdoc">
+<h4>Update Details</h4>
+</div>
+<br>
+<div id="econtent">
+		<center>
+			{{=form}}
+		</center>
+</div>

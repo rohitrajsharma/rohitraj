@@ -1,0 +1,96 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,False}}
+{{extend 'adminlayout.html'}}
+
+<script language="javascript">
+
+function editStatus(id){
+    var f=document.theform;
+    if (( f.status[0].checked == false ) && ( f.status[1].checked == false )) 
+    { 
+		alert ( "Please choose Status: Approved or Rejected" ); 
+		return false;
+	}
+	else
+	{
+		f.method="post";
+		f.action="{{=URL('default','admin_approve_leave',args=id)}}";
+		f.submit();
+	}
+}
+function editRecord(id){
+    var f=document.theform1;
+    f.method="post";
+    f.action="{{=URL('default','admin_edit_leave_status',args=id)}}";
+    f.submit();
+}
+function deleteRecord(id){
+    var f=document.theform1;
+    f.method="post";
+    f.action="{{=URL('default','admin_del_leave_status',args=id)}}";
+    f.submit();
+}
+</script>
+
+<div id="contdoc">
+<h4>Leave Details</h4>
+</div>
+<div id="contdoc">
+<div  style="padding-top: 50px;  padding-right: 350px;  padding-bottom: 0.25in; padding-left: 350px;  ">
+<fieldset style="border:1px solid green; ">
+      <legend>Apply Leave Info</legend>
+	  <h6 align="center">Current Status is : {{=estat}}</h6>
+	  <form name="theform" style="padding-right: 50px; padding-left: 20px;  ">
+		Approved<input type="radio" name="status" value="Approved" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Rejected<input type="radio" name="status" value="Rejected" />
+        
+		</br> </br>
+		<input type="submit" value="ok" onclick="editStatus({{=id}});" />
+
+	</form>
+
+</fieldset>
+</div>
+<div>
+<fieldset style="border:1px solid green">
+	<form name="theform1" >
+	<table width="100%">
+<tr BGCOLOR="#99CCFF">
+	<td>
+		Employee ID :
+	</td>
+	<td> {{=eid}}</td>
+	<td>
+		Leave Type :
+	</td>
+	<td> {{=eltype}}</td>
+</tr>
+<tr  BGCOLOR="#99CC00">
+	<td>
+		From : 
+	</td>
+	<td>{{=efrom}}</td>
+	<td>
+		To : 
+	</td>
+	<td>{{=eto}}</td>
+	
+</tr>
+<tr  BGCOLOR="#99CCFF">
+<td>
+		Total Day : 
+	</td>
+	<td>{{=etotday}}</td>
+	<td>
+		Reason : 
+	</td>
+	<td>{{=ereason}}</td>
+</tr>
+	<tr>
+	<td>
+	<input type="submit" value="Edit" onclick="editRecord({{=id}});" /><input type="submit" value="Delete" onclick="deleteRecord({{=id}});" />
+	</td>
+	</tr>
+	</table>
+</form>
+</fieldset>
+</div>

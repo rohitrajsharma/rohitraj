@@ -1,0 +1,68 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,False}}
+{{extend 'adminlayout.html'}}
+
+<script> 
+
+$(document).ready(function()
+	{ 
+	
+	$('#org').change(function()
+				{
+					ajax('locn', ['org'],'target1'); 
+			
+				});
+				
+	
+	$("#theform").validate({
+	
+	errorClass: "my-error-class",
+   validClass: "my-valid-class",
+    
+    rules: {
+    	org: {
+    		required: true
+    	}
+		,locn: {
+			required: true
+		}
+		,dpt:{
+			required: true
+		}
+    },
+    messages: {
+    	 org: "Please select the Organization name"
+		,locn: "Please select the Location "
+		,dpt: "Please enter the Department name"
+		
+    }
+    
+    
+    });	
+		
+	}); 
+	
+</script>
+
+<div id="contdoc">
+<h4>Add New Department</h4>
+</div>
+<div id="contdoc">
+<div id="docsize1">
+<form name="theform" id="theform" method="post" action="admin_submit_dpt">
+	<div>
+		<p><label for="org">Organization:</label>
+			<select name="org" id="org" >
+    		   <option value="">Select Organization</option> 
+        	{{for dp in dpt:}} 
+            	<option value={{=dp.id}}>{{=dp.organization_name}}</option> 
+        	{{pass}} 
+    		</select></p>
+     
+    <p><label for="locn">Location:</label><div id="target1"></div></p> 
+    <p><label for="dpt">Department:</label><input id="dpt" type="text" value="" name="dpt" /></p>
+    </br>
+	<p><input class="submit" type="submit" name="submit" value="Submit" /></p>
+	</div>
+</form>
+</div>
+</div>

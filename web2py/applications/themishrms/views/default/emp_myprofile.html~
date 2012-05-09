@@ -1,0 +1,95 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+<div id="contdoc">
+<h4>My Profile</h4>
+</div>
+<div id="econtent">
+	<div class="paneltop">
+	<h1>Basic Information</h1>
+     	<div class="panelpartl">
+     		<div class="even">Employee Code:&nbsp;{{=empcode}}</div>
+			<br>
+			<div class="even">Name:&nbsp;{{=empfname}}&nbsp;{{=emplname}}</div>
+			<br>
+			<div class="even">Themis Email:&nbsp;{{=empemail}}</div>
+			<br>
+			<div class="even">Personal Email:&nbsp;{{=emppemail}}</div>
+			<br>	
+	   </div>
+		<div class="panelpartr">
+			<div class="even">Date of Joining:&nbsp;{{=empdoj}}</div>
+			<br>
+			<div class="even">Department:&nbsp;{{=empdpt}}</div>
+			<br>
+			<div class="even">Reporting Manager:&nbsp;{{=emprptmgr}}</div>
+			<br>
+			<div class="even">Designation:&nbsp;{{=empdgn}}</div>
+			<br>			
+		</div>
+	</div>
+	
+	<div class="panel">
+		<h1>Personal Information</h1>
+			<div style="float:right; margin-top:-30px;">{{=A(T('Update Details'),_href=URL('emp_update_personal_info'))}}</div>
+		<div class="panelpartl">
+			 <div class="even">Date of Birth:&nbsp;{{=empdob}}</div>
+			<br>
+			<div class="even">Blood Group:&nbsp;{{=empgrp}}</div>
+			<br>
+			<div class="even">Mobile:&nbsp;{{=empmbl}}</div>
+			<br>
+			<div class="even">Present Address:&nbsp;{{=emppaddr}}</div>
+			<br>
+			<div class="even">Bank Account Number:&nbsp;{{=empbank}}</div>
+			<br>
+			<div class="even">Pan Card Number:&nbsp;{{=emppancard}}</div>
+			<br>	
+		</div>
+		<div class="panelpartr">		
+			<div class="even">Gender:&nbsp;{{=empgndr}}</div>   
+			<br>
+			<div class="even">Marital Stauts:&nbsp;{{=empstatus}}</div>
+			<br>
+			<div class="even">Home Phone:&nbsp;{{=empphone}}</div>
+			<br>
+			<div class="even">Permanent Address:&nbsp;{{=empperaddr}}</div>
+			<br>
+			<div class="even">Citizenship:&nbsp;{{=empctz}}</div>
+			<br>
+			<div class="even">State:&nbsp;{{=empst}}</div>
+			<br>
+			<div class="even">Passport Number:&nbsp;{{=emppassno}}</div>
+			<br>
+		</div>
+	</div>
+	<div class="panel">
+		<h1>Educational Information</h1>
+			<div style="float:right; margin-top:-30px;">{{=A(T('Update Details'),_href=URL('emp_update_edu_info'))}}</div>
+		<table width="800px">
+        <tr >
+            <th width="200px">University</th>
+            <th width="150px">Name of Course</th>
+            <th width="100px">Specification</th>
+            <th width="50px">Grade</th>
+            <th width="50px">Percentage</th>
+            <th width="50px">Completion Year</th>
+        </tr>
+    </table>
+    
+	<div >
+        <table width="800px">
+            {{for ed in edtable:}}
+            <tr>
+                <td width="200px">{{=ed.university}}</td>
+                <td width="150px">{{=ed.name_of_course}}</td>
+                <td width="100px">{{=ed.specification}}</td>
+                <td width="50px">{{=ed.grade}}</td>
+                <td width="50px">{{=ed.percentage}}</td>
+                <td width="50px">{{=ed.completion_year}}</td>
+            </tr>
+            {{pass}}
+        </table>
+    </div>    
+    
+	</div>
+</div>

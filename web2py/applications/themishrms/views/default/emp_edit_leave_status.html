@@ -1,0 +1,80 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+<script> 
+$(document).ready(function()
+	{ 	
+	
+	$("#theform").validate({
+	errorClass: "my-error-class",
+	validClass: "my-valid-class",   
+    rules: {
+    	empcode: {
+    		required: true
+    	}
+		,name: {
+			required: true
+		}
+		,fleave:{
+			required: true
+		}
+		,tleave:{
+			required: true
+		}
+	
+		,tday:{
+			required:true		
+		}
+		,rleave:{
+			required: true
+				
+		}
+		,ltype:{
+			required: true
+			
+		}
+		
+    },
+    messages: {
+    	 empcode: "Please enter the employee code"
+		,name: "Please enter the employee name "
+		,fleave: "Please select the Date from leave applied"
+		,tleave: "Please select the Date to leave applied"
+		,tday: "Please enter total day of leave"
+		,rleave: "Please enter Reason for leave"
+		,ltype: "Please select the leave type"
+		
+    }
+    });	
+		
+	}); 
+	
+</script>
+
+<div id="econtent">
+<h4>Edit Leave Status</h4>
+</div>
+
+<div id="econtent">
+<div id="docsize1">
+<form name="theform" id="theform" method="post" action="{{=URL('default','emp_submit_edit_leave_status')}}">
+	<table>
+	<tr>    
+    <td><p><label >Employee Code:</label></td><td><input id="empcode" type="text" value="{{=ecode}}" name="empcode" readonly="readonly" /></p> </td> </tr>     
+    <tr> <td><p><label for="name">Employee Name:</label></td><td><input id="name" type="text" value="{{=name}}" name="name" /></p></td></tr>
+    <tr><td><p><label for="ltype">Leave Type:</label></td><td><select name="ltype" id="ltype" >
+    		   <option value="{{=eltype}}">Select Leave Type</option> 
+        	{{for type in ltype:}} 
+            	<option value={{=type}}> {{=type}}</option>  
+        	{{pass}} 
+    		</select></p></td> </tr>
+    
+	<tr><td><p><label for="fleave">From Leave:</label></td><td><input id="fleave" class="date" type="text" value="{{=fle}}" name="fleave" /></p></td></tr>
+    <tr><td><p><label for="tleave">To Leave:</label></td><td><input id="tleave" class="date" type="text" value="{{=tle}}" name="tleave" /></p></td> </tr>
+    <tr> <td><p><label for="tday">Total Day:</label></td><td><input id="dgn" type="text" value="{{=tday}}" name="tday" /></p></td> </tr>
+    <tr><td><p><label for="rleave">Reason for Leave:</label></td><td><input id="rleave" type="text" value="{{=rle}}" name="rleave"/></p></td> </tr>
+    </br>
+	<tr><td></td><td><center><p><input class="submit" type="submit" name="submit" value="Submit" /></p></td></tr>
+	</table>
+</form>
+</div>
+</div>

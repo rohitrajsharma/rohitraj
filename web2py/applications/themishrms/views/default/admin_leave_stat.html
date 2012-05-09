@@ -1,0 +1,49 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,False}}
+{{extend 'adminlayout.html'}}
+
+<div id="contdoc">
+<h4>Leave Status</h4>
+</div>
+<div id="contdoc">
+<center>
+<form name="theform" method="post">
+
+<table width="800px">
+        <tr >
+            <th width="50px">EMPLOYEE CODE</th>
+            <th width="150px">EMAIL</th>
+            <th width="100px">NAME</th>
+            <th width="50px">LEAVE TYPE</th>
+            <th width="50px">FROM LEAVE</th>
+            <th width="50px">TO LEAVE</th>
+            <th width="50px">TOTAL DAY</th>
+            <th width="50px">REASON FOR LEAVE</th>
+            <th width="50px">REPORTING MANAGER</th>
+            <th width="50px">APPROVED BY</th>
+            <th width="50px">STATUS</th>
+        </tr>
+    </table>
+    
+	<div >
+        <table width="800px">
+            {{for adleave in adminleave:}}
+            <tr>
+                <td width="50px"><a href="{{=URL('default','admin_edit_leave',args=adleave.id)}}">{{=adleave.employee_code}}</a></td>
+                <td width="150px">{{=adleave.email}}</td>
+                <td width="100px">{{=adleave.name}}</td>
+                <td width="50px">{{=adleave.leave_type}}</td>
+                <td width="50px">{{=adleave.from_leave}}</td>
+                <td width="50px">{{=adleave.to_leave}}</td>
+                <td width="50px">{{=adleave.total_day}}</td>
+                <td width="50px">{{=adleave.reason_for_leave}}</td>
+                <td width="50px">{{=adleave.reporting_manager}}</td>
+                <td width="50px">{{=adleave.approved_by}}</td>
+                <td width="50px">{{=adleave.status}}</td>
+            </tr>
+            {{pass}}
+        </table>
+
+</form> 
+</center>
+
+</div>

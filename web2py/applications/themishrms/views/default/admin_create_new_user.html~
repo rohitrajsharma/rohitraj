@@ -1,0 +1,136 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,False}}
+{{extend 'adminlayout.html'}}
+<script> 
+$(document).ready(function()
+	{ 	
+	$('#org').change(function()
+				{
+					ajax('locn', ['org'],'target1'); 
+			
+				});
+	$("#theform").validate({
+	errorClass: "my-error-class",
+   validClass: "my-valid-class",   
+    rules: {
+    	org: {
+    		required: true
+    	}
+		,locn: {
+			required: true
+		}
+		,dpt:{
+			required: true
+		}
+		,empcode:{
+			required: true
+		}
+		,fname:{
+			required: true,
+    		minlength: 2		
+		}
+		,lname:{
+			required:true		
+		}
+		,orgemail:{
+			required: true,
+			email : true		
+		}
+		,pemail:{
+			required: true,
+			email : true		
+		}
+		,doj:{
+			required: true		
+		}
+		,rmgr:{
+			required: true		
+		}
+		,dgn:{
+			required: true		
+		}
+		,stat:{
+			required: true		
+		}
+    },
+    messages: {
+    	 org: "Please select the Organization name"
+		,locn: "Please select the Location "
+		,dpt: "Please select the Department name"
+		,empcode: "Please enter the Employee code"
+		,fname:{
+			required: "Please enter the first name",
+    		minlength: jQuery.format("You need to use at least {0} characters for First name")		
+		}
+		,lname: "Please enter the last name"
+		,orgemail:{
+			required: "Please enter the Organization email address",
+         email: "email address must be in the format of name@domain.com"		
+		}
+		,pemail: {
+			required: "Please enter the Personal email address of Employee",
+         email: "email address must be in the format of name@domain.com"		
+		}
+		,doj: "Please enter the date of joining"
+		,rmgr: "Please enter the Reporting Manager name"
+		,dgn: "Please enter the Designation of the Employee"
+		,stat: "Please select the employee status"
+    }
+    });	
+		
+	}); 
+	
+</script>
+
+<div id="contdoc">
+<h4>{{=var}}</h4>
+</div>
+
+<div id="contdoc">
+<div id="docsize1">
+<form name="theform" id="theform" method="post" action="admin_submit_newuser">
+	<table>
+	<tr><td><p>
+		<label for="org">Organization:</label></td>
+			<td><select name="org" id="org" >
+    		   <option value="">Select Organization</option> 
+        	{{for org in org:}} 
+            	<option value={{=org.id}}>{{=org.organization_name}}</option> 
+        	{{pass}} 
+    		</select> </td></p>
+    <td><p><label for="locn">Location:</label></td> <td><div id="target1"></div></p></td> </tr> 
+    <tr> <td><p><label for="dpt">Department:</label></td>
+		<td><select name="dpt" id="dpt" >
+    		   <option value="">Select Department</option> 
+        	{{for dp in dpt:}} 
+            	<option value={{=dp.department}}>{{=dp.department}}</option> 
+        	{{pass}} 
+    		</select></td></p>   
+     
+    <td><p><label >Employee Code:</label></td><td><input id="empcode" type="text" value="{{=id}}" name="empcode" readonly="readonly" /></p> </td> </tr>     
+    <tr> <td><p><label for="fname">First Name:</label></td><td><input id="fname" type="text" value="" name="fname" /></p></td>
+    <td><p><label for="lname">Last Name:</label></td><td><input id="lname" type="text" value="" name="lname" /></p></td> </tr>
+    <tr> <td><p><label for="orgemail">Themis E-mail:</label></td><td><input id="orgemail" type="text" value="" name="orgemail" /></p></td>
+    <td><p><label for="pemail">Personal E-mail:</label></td><td><input id="pemail" type="text" value="" name="pemail" /></p></td> </tr>
+    <tr> <td><p><label for="dgn">Designation:</label></td><td><input id="dgn" type="text" value="" name="dgn" /></p></td> 
+    <td><p><label for="rmgr">Reporting Manager:</label>
+    	</td><td><select name="rmgr" id="rmgr" >
+    		   <option value="">Select Reporting Manager</option> 
+        	{{for rm in rmgr:}} 
+            	<option value={{=rm.email}}>{{=rm.email}} ({{=rm.first_name}} {{=rm.last_name}})</option>  
+        	{{pass}} 
+    		</select></td></p></td> </tr>
+    <tr><td><p><label for="doj">Date of Joining:</label></td><td><input id="doj" class="date" value="" name="doj" /></p></td>
+	  <td><p><label for="stat">Employee Status:</label></td><td>
+		<select name="stat" id="stat" >
+    		   <option value="">Select Status</option> 
+        	{{for stat in stat:}} 
+            	<option value={{=stat}}>{{=stat}}</option> 
+        	{{pass}} 
+    		</select>    
+    </p></td> </tr> 
+    </br>
+	<tr><td></td><td></td><td><center><p><input class="submit" type="submit" name="submit" value="Submit" /></p></td></tr>
+	</table>
+</form>
+</div>
+</div>

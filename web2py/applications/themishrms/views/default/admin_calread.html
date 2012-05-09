@@ -1,0 +1,13 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'adminlayout.html'}}
+</br></br>
+
+<fieldset id="calread"><legend align="left"><img src="{{=URL('static','images/lcmplus.png')}}" /></legend>
+{{=form}}
+{{for t,f in db.holiday_list._referenced_by:}}{{if not t[-8:]=='_archive':}}{{pass}}{{pass}}
+{{=A(T('[Holiday details]'),_href=URL('#'))}}
+{{=A(T('[Submit]'),_href=URL('#'))}}
+
+</fieldset>
+
+</br></br>

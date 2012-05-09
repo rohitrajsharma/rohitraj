@@ -1,0 +1,10 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,False}}
+{{extend 'adminlayout.html'}}
+<div id="contdoc">
+<h4>Themis Project Console</h4>
+{{=A(T('Assign Project'),_href=URL('admin_assign_project'))}}
+</div>
+<div id="contdoc">
+{{=A(T('Add New Project'),_href=URL('admin_submit_project'))}}
+
+</div>

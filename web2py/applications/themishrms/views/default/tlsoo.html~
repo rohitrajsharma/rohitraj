@@ -1,0 +1,18 @@
+{{extend 'layout.html'}}
+<div>
+	<table>
+		<tr>
+		<td><h6 style= "color:#cda67f; font-size: 12pt;text-align: left">Infrastructure</h6><p style= " font-size: 10pt;text-align:justify;">We have a state of the art facility with most recent collaborative systems. We use 5th generation of security strategy by installing thin clients systems with ultra-powerful server which has high storage capacity. We ensure high data security, redundancy, solution flexibility, scalability of systems; provide optimized utilization of hardware and software and have in place a sound business continuity plan. We ensure physical and electronic security at our premises.  
+		</p><hr/>
+		<h6 style= "color:#cda67f; font-size: 12pt;text-align: left">Information Security</h6>
+		<p style= " font-size: 10pt;text-align:justify;">
+		We ensure the highest level of security for client data and information. Our systems are designed and configured to adhere to the prescribed standards of information security such as confidentiality, integrity and availability. We have a centralized data and control management system which ensures security of confidential data at all times. 
+		</p><hr />
+		<h6 style= "color:#cda67f; font-size: 12pt;text-align: left">Tech Support</h6>
+		<p style= " font-size: 10pt;text-align:justify;">
+		We provide technology support to our legal services team even beyond the normal business hours as per the client/project requirements.  Our technology support is measured on increasing efficiency of our processes, reliability and scalability, collaboration and security of our systems. We have legally compliant and technologically sound methods of retention, preservation and destruction of electronic information.
+		</p><hr/>
+		</td>
+		</tr>
+	</table>
+</div>

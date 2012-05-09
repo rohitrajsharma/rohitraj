@@ -1,0 +1,106 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+
+<script type="text/javascript">
+var c=0;
+var t;
+var timer_is_on=0;
+
+function timedCount()
+{
+document.getElementById('txt').value=c;
+c=c+1;
+t=setTimeout("timedCount()",1000);
+}
+
+function doTimer()
+{
+if (!timer_is_on)
+  {
+  timer_is_on=1;
+  timedCount();
+  }
+}
+
+function stopCount()
+{
+clearTimeout(t);
+timer_is_on=0;
+//var f=document.theform;
+//f.method="post";
+//f.action="ajax('{{=URL('admin_edit_leave_status')}}',['proname'],'target');"
+//f.submit();
+}
+</script>
+
+
+<script>
+$(document).ready(function()
+	{ 
+	
+	$('#pro').change(function()
+				{
+					ajax('emp_task', ['pro'],'target1'); 
+			
+				});
+	});
+
+</script>
+
+</head>
+	
+<div id="contdoc"><h4>Time Sheet</h4> 
+
+</div>
+<a href="#"style="margin-right:2cm;">History</a>
+<a href="#">Add Manualy</a>
+<div id="econtent">
+
+	<div id="usr_head1" >
+	<form name="taskform">
+	<p><label for="pro">Project:</label>
+			<select name="pro" id="pro" >
+    		   <option value="">Select Project</option> 
+        	{{for pr in proj:}} 
+            	<option value={{=pr.id}}>{{=pr.project_name}}</option> 
+        	{{pass}} 
+    		</select></p>
+	
+	</div>
+	<div id="usr_head1">
+	
+	<label for="tsk">Activity:</label><div id="target1" ></div>
+	<input type="button" value="Ok " onClick="ajax('{{=URL('emp_task_timesheet')}}',['pro','tsk'],'target2');">
+	</form>
+	</div>
+	<div id= "usr_head">
+				<form name="theform">
+				<!--
+					Project<input type="text" id="tx1" name="proname">
+					Task<input type="text" id="txt2" name="protask">
+							
+					Time<input type="text" id="txt" name="protime">
+					<input type="button" value="Start " onClick="doTimer()">
+					<input type="button" value="Stop " onClick="ajax('{{=URL('adata')}}',['proname','protask','protime'],'target');stopCount();">
+				-->
+				<div id="target2"></div>
+				
+				<input type="button" value="Start " onClick="doTimer()">
+				<input type="button" value="Stop " onClick="ajax('{{=URL('adata')}}',['proname','protask','protime'],'target');stopCount();">
+				</form >
+		
+	
+	</div>
+			
+			
+			
+			<div id="target"></div>
+			
+			<input type="button" value="Add Manualy " onClick="doTimer1()">
+					<input type="button" value="Save " onClick="stopCount1()">
+	</div>
+
+		
+			
+
+		

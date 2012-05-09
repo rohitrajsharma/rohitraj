@@ -1,0 +1,42 @@
+.ddpanel .ddpanelcontent{ 
+color:#767778;
+background:none; 
+margin-top:-12px;
+}
+
+.ddpanel .ddpaneltab{ 
+margin-right: 20px;
+font: normal 12px Arial;
+}
+
+.ddpanel .ddpaneltab a{
+float: right;
+color: black;
+background:#cacbcd no-repeat;
+text-decoration:none;
+letter-spacing: 1px;
+}
+
+.ddpanel .ddpaneltab a span{ 
+float: left;
+display: block;
+padding: 1px 12px 4px 13px;
+cursor: pointer;
+}
+
+.ddpanel .ddpaneltab { 
+margin-top: 2px;
+margin-left: 5px;
+}
+
+.ddpanel .ddpaneltab a:hover{ 
+background-color:none;
+}
+
+.ddpanel .ddpaneltab a:active, .ddpanel .ddpaneltab a:focus{
+outline: 0;
+}
+
+.ddpanel .ddpaneltab a:hover span{
+background-color:none;
+}

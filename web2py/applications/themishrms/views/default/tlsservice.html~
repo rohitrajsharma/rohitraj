@@ -1,0 +1,57 @@
+{{left_sidebar_enabled=right_sidebar_enabled=False}}
+
+{{extend 'layout.html'}}
+<h3>Our Expertise</h3>
+<br>
+<div>
+<div id="sec1">
+	<div >
+		<h5>Transaction Support</h5>
+		<li>Term sheet</li>
+		<li>Funding</li>
+		<li>Transaction Documentation</li>
+		<li>Deal Closure Assistance</li>
+		<li>Corporate Secretarial</li>
+	</div>
+	<br>
+	<div>
+		<h5>Data Room & Due Diligence</h5>
+		<li>Data Room Set-Up-Virtual/Physical</li>
+		<li>Indexing, Tagging and Summarization of DD Documents</li>
+		<li>Generating DD Report</li>
+		<li>Critical Issue Mapping& Reporting</li>
+		<li>Validation of Transactional Assumptions</li>
+	</div>
+	<br>
+	<div>
+		<h5>Offshore Legal Services - US and UK laws</h5>
+		<li>Legal Research</li>
+		<li>Contract Review & Management</li>
+		<li>US state surveys</li>
+	</div>
+	<br>
+</div>
+<div id="sec2">
+	<div>
+		<h5>Ethics Compliance Support (FCPA and UKBA)</h5>
+		<li>Due Diligence</li>
+		<li>Formulation and Implementation of Anti-Corruption Compliance Programs</li>
+		<li>Training</li>
+		<li>Compliance Management</li>
+	</div>
+	<br>
+	<div>
+		<h5>Legal & Tax Compliance Management</h5>
+		<li>Mapping of Applicable Compliances</li>
+		<li>Creation of compliance manual</li>
+		<li>Preparation of Compliance Calendars</li>
+		<li>Triggering Reminders / Escalations</li>
+		<li>Monitoring the compliances</li>
+		<li>Vetting of Compliance Documents</li>
+		<li>Legislative Tracking</li>
+	</div>
+</div>
+
+
+
+

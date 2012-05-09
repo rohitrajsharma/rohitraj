@@ -1,0 +1,85 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+<div id="contdoc">
+<h4>Leave Calendar</h4>
+</div>
+<div id="econtent">
+<div class="paneltop">
+     	<div class="panelpartl" style="background:#fff;margin-top:10px; ">
+     	<ul>
+     		<li><a href="{{=URL('default','emp_apply_leave')}}">Apply for Leave</a></li>
+		</ul>
+	   </div>
+		<div class="panelpartr">
+		<center>
+		<h2>Leave Details each Year</h2>
+			<div class="even">Vacation Leave:&nbsp;{{=totvacationleave}}</div>
+			<div class="even">Medical Leave:&nbsp;{{=totmedicalleave}}</div>
+			<div class="even">Casual Leave:&nbsp;{{=totcasualleave}}</div>
+			<br>
+		</center>	
+		</div>
+</div>
+<center>  
+<div class="panel">
+	<h1>Total Leave applied </h1>
+			
+		<table width="800px">
+        <tr >
+            <th width="150px">Taken Vacation Leave</th>
+            <th width="150px">Taken Medical Leave</th>
+            <th width="100px">Taken Casual Leave</th>
+            <th width="50px">Left Vacation Leave</th>
+            <th width="50px">Left Medical Leave</th>
+            <th width="50px">Left Casual Leave</th>
+        </tr>
+    </table>
+    
+	<div >
+        <table width="800px">
+            {{for leave in empleave:}}
+            <tr>
+                <td width="150px">{{=leave.taken_vacation_leave}}</td>
+                <td width="150px">{{=leave.taken_medical_leave}}</td>
+                <td width="100px">{{=leave.taken_casual_leave}}</td>
+                <td width="50px">{{=leave.left_vacation_leave}}</td>
+                <td width="50px">{{=leave.left_medical_leave}}</td>
+                <td width="50px">{{=leave.left_casual_leave}}</td>
+            </tr>
+            {{pass}}
+        </table>
+    </div>    
+	</div>
+	
+	<div class="panel">
+	<h1>Status for Applied Leave </h1>
+			
+		<table width="800px">
+        <tr >
+            <th width="100px">Leave Type</th>
+            <th width="100px">From Leave</th>
+            <th width="100px">To Leave</th>
+            <th width="10px">Total Day</th>
+            <th width="250px">Reason for Leave</th>
+            <th width="100px">Status</th>
+        </tr>
+    </table>
+    
+	<div >
+        <table width="800px">
+            {{for stat in empstat:}}
+            <tr>
+                <td width="100px">{{=stat.leave_type}}</td>
+                <td width="100px">{{=stat.from_leave}}</td>
+                <td width="100px">{{=stat.to_leave}}</td>
+                <td width="10px">{{=stat.total_day}}</td>
+                <td width="250px">{{=stat.reason_for_leave}}</td>
+                <td width="100px">{{=stat.status}}</td>
+            </tr>
+            {{pass}}
+        </table>
+    </div>    
+	</div>
+	
+	</center>
+</div>

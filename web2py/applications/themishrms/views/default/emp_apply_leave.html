@@ -1,0 +1,61 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+
+<script> 
+$(document).ready(function()
+	{ 	
+	
+	$("#theform").validate({
+	errorClass: "my-error-class",
+	validClass: "my-valid-class",   
+    rules: {
+    	apply: {
+    		required: true
+    	}
+		,fromleave: {
+			required: true
+		}
+		,toleave:{
+			required: true
+		}
+		,reason:{
+			required: true
+		}
+		
+		
+    },
+    messages: {
+    	 apply: "Please select the Leave type"
+		,fromleave: "Please select the Date "
+		,toleave: "Please enter the Employee code"
+		,reason:"Please enter the reason"
+		
+	 }
+    });	
+		
+	}); 
+	
+</script>
+
+<div id="contdoc">
+<h4>Apply for Leave</h4>
+</div>
+<div id="econtent">
+<div class="panel">
+<br><br>
+<center>
+	<form name="theform" id="theform" method="post" action="submit_emp_apply_leave">
+		Select Leave Type:<select name="apply" id="apply">
+		<option value="">Select Leave Type</option>
+  			<option value="Casual Leave">Casual Leave</option>  
+  			<option value ="Medical Leave">Medical Leave</option> 
+  			<option value="Vacation Leave">Vacation Leave</option> 
+	</select> <br><br> 
+	Form Leave: <input type="text" class="date" name="fromleave" value=""/>&nbsp;
+	To Leave: <input type="text" class="date" name="toleave" value=""/><br><br>
+	Reason of Leave    : <input type="text" name="reason" value=""/><br><br>
+	<center><p><input class="submit" type="submit" name="submit" value="Submit" /></p>
+	</form>
+</center>
+</div> 
+</div>

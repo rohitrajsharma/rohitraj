@@ -1,0 +1,5 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,False}}
+{{extend 'adminlayout.html'}}
+<div id="contdoc">
+<center></center>
+</div>

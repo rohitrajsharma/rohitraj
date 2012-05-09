@@ -1,0 +1,39 @@
+{{left_sidebar_enabled=right_sidebar_enabled=False}}
+{{extend 'layout.html'}}
+<script type="text/javascript">
+// Popup window code
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=300,width=350,left=500,top=200,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}
+</script>
+<STYLE TYPE="text/css">
+			
+			p{ font-size: 10pt;}
+			h1 {
+
+			font-size:18px;
+			color:#A98F71;
+			}
+</STYLE>
+<fieldset id ="contact">
+<table>
+	<tr>
+		<td >
+			<legend style="color#A98F71" >E-mail</legend>
+				<!-- <div class="flash" style="display: block">{{#=top_message}}</div>-->
+			{{ =form}}
+			{{#Recaptcha(use_ssl=True, error_message='invalid')}}					
+		</td>
+		<td width="5%"><td>
+		<td>
+		<font size="3" style="text-align:justify;">
+			<p align="justify"><b> <br>Devarabeesana Halli,<br> Marathahalli-Sarjapur Outer Ring Road, <br>Bangalore – 560103 India
+				Bangalore, Karnataka, India.<br>Office Phone: +91 80 420 11689 <br> +91 80 420 11690 <br> E-mail: info@themislexsol.com</b></p>	
+		<div><!-- Google Maps Element Code --><br>
+			<iframe frameborder=0 marginwidth=0 marginheight=0 border=0 style="border:2;margin:1;width:400px;height:300px;" src="http://www.google.com/uds/modules/elements/mapselement/iframe.html?maptype=roadmap&latlng=12.950527331561279%2C77.69393920898438&mlatlng=12.932857%2C77.685426&maddress1=Devarabeesana%20Halli%2C%20Marathahalli-Sarjapur%20Ring%20Road%2C%20Bangalore%20%E2%80%93%20560103%20India&maddress2=Bangalore%2C%20Karnataka%2C%20India&zoom=13&mtitle=Themis%20Lexsol%20Pvt.%20Ltd.&element=true" scrolling="yes" allowtransparency="true"></iframe>
+		</div>
+		</td>
+	</tr>
+</table>
+</fieldset>

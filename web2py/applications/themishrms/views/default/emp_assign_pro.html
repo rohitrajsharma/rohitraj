@@ -1,0 +1,87 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+
+<script>
+$(document).ready(function()
+	{ 
+	
+	$('#dp').change(function()
+				{
+					ajax('emp_orz', ['orz','dp'],'target1'); 
+			
+				});
+				
+	
+	$("#theform").validate({
+    
+    rules: {
+    	pro: {
+    		required: true
+    		
+    	}
+		,orz: {
+			required: true
+		}
+		, dp: {
+			required: true
+			
+		}
+    	,usr: {
+    		required: true
+		}
+	},
+    messages: {
+    	pro:"Please Select the Project"
+    	,orz:"Please Select the Organization"
+    	,dp: "Please select the  Department"
+		,usr: "Please select Employee"
+    }
+    
+    
+    });	
+		
+	}); 
+	
+</script> 
+
+
+<div id="econtent">
+<h4>Themis Project</h4>
+</div>
+
+<br>
+<div id="econtent">
+<center>
+<form name="theform" id="theform" method="post" action="emp_submit_assign_project">
+	<div>
+		<p><label for="pro">Project:</label>
+			<select name="pro" id="pro" >
+    		   <option value="">Select Project</option> 
+        	{{for pr in proj:}} 
+            	<option value={{=pr.id}}>{{=pr.project_name}}</option> 
+        	{{pass}} 
+    		</select></p>
+    		
+    	<p><label for="orz">Organization:</label>
+			<select name="orz" id="orz" >
+    		   <option value="">Select Organization</option> 
+        	{{for orz in orzn:}} 
+            	<option value={{=orz.id}}>{{=orz.organization_name}}</option> 
+        	{{pass}} 
+    		</select></p>
+    		
+    	<p><label for="dp">Department:</label>
+			<select name="dp" id="dp" >
+    		   <option value="">Select Department</option> 
+        	{{for dp in dept:}} 
+            	<option value={{=dp.id}}>{{=dp.department}}</option> 
+        	{{pass}} 
+    		</select></p>
+     
+   
+     <p class="time"><label for="usr">Employee:</label><div id="target1" class="time1"></div></p> 
+    </br>
+	<p class="time2"><input class="submit" type="submit" name="submit" value="Submit" /></p>
+	</div>
+</form>
+</div>

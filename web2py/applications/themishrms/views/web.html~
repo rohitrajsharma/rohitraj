@@ -1,0 +1,72 @@
+<html>
+<head>
+<style type="text/css">
+#navigation {font-size:0.75em; width:150px;}
+#navigation ul {margin:0px; padding:0px;}
+#navigation li {list-style: none;}
+
+ul.top-level {background:#666;}
+ul.top-level li {
+ border-bottom: #fff solid;
+ border-top: #fff solid;
+ border-width: 1px;
+}
+#navigation a {
+ color: #fff;
+ cursor: pointer;
+ display:block;
+ height:25px;
+ line-height: 25px;
+ text-indent: 10px;                   
+ text-decoration:none;
+ width:100%;
+}
+#navigation a:hover{
+ text-decoration:underline;
+}
+#navigation li:hover {
+ background: #f90;
+ position: relative;
+}
+ul.sub-level {
+    display: none;
+}
+
+li:hover .sub-level {
+    background: #999;
+    border: #fff solid;
+    border-width: 1px;
+    display: block;
+    position: absolute;
+    left: 75px;
+    top: 5px;
+}
+ul.sub-level li {
+    border: none;
+    float:left;
+    width:150px;
+}
+</style>
+</head>
+<body>
+<div id="navigation">
+    <ul class="top-level">
+        <li><a href="{{=URL('default','emp_myprofile')}}">My Profile</a>
+            <ul class="sub-level">
+                <li><a href="#">Sub Menu Item 1</a></li>
+                <li><a href="#">Sub Menu Item 2</a></li>
+                <li><a href="#">Sub Menu Item 3</a></li>
+                <li><a href="#">Sub Menu Item 3</a></li>
+            </ul>
+        </li>
+		  <li><a href="{{=URL('default','emp_leavecalendar')}}">Leave Calendar</a></li>
+		  <li><a href="{{=URL('default','emp_calendar')}}">Holiday Calendar</a></li>
+		  <li><a href="{{=URL('default','emp_company')}}">Company</a></li>
+		  <li><a href="{{=URL('default','emp_organization')}}">Organization</a></li>
+		  <li><a href="{{=URL('default','emp_mydoc')}}">My Documents</a></li>
+		  <li><a href="{{=URL('default','emp_compliance')}}">Compliance</a></li>
+		  <li><a href="{{=URL('default','emp_all')}}">All</a></li>       
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+<div id="contdoc">
+<h4>Organization</h4>
+</div>
+<div id="econtent">
+
+
+<div id="usr_head1" >Select Project</div>
+			<div id="usr_head1" >Select Task</div>
+			<div id="usr_head">Time Counter
+				<form>
+
+						Project<input type="text" id="txt1">
+			
+						Task<input type="text" id="txt2">
+		
+						Time<input type="text" id="txt">
+	
+					<input type="button" value="Start " onClick="doTimer()">
+					<input type="button" value="Stop " onClick="stopCount()">
+				</form>
+			</div>
+			
+	</div>
+</div>

@@ -1,0 +1,242 @@
+timestamp: 2012-05-08T12:38:07.939729
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512),
+    organization_name CHAR(512),
+    location CHAR(512),
+    department CHAR(512),
+    employee_code CHAR(512) UNIQUE,
+    personal_email CHAR(512),
+    date_of_joining DATE,
+    reporting_manager CHAR(512),
+    designation CHAR(512),
+    employee_status CHAR(512),
+    date_of_exit DATE,
+    exit_remark TEXT
+);
+success!
+timestamp: 2012-05-08T12:38:08.032211
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2012-05-08T12:38:08.116471
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    group_id INTEGER REFERENCES auth_group(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2012-05-08T12:38:08.186932
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group(id) ON DELETE CASCADE,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2012-05-08T12:38:08.268944
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2012-05-08T12:38:08.338715
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2012-05-08T12:38:08.417882
+CREATE TABLE add_new_organization(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    organization_name CHAR(512),
+    organization_prefix CHAR(512)
+);
+success!
+timestamp: 2012-05-08T12:38:08.499226
+CREATE TABLE add_new_department(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    department CHAR(512),
+    description CHAR(512)
+);
+success!
+timestamp: 2012-05-08T12:38:08.571481
+CREATE TABLE add_new_location(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    organization_name INTEGER REFERENCES add_new_organization(id) ON DELETE CASCADE,
+    location CHAR(512),
+    phone INTEGER,
+    address TEXT
+);
+success!
+timestamp: 2012-05-08T12:38:08.641306
+CREATE TABLE practice_area(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    department INTEGER REFERENCES add_new_department(id) ON DELETE CASCADE,
+    practice_area CHAR(512)
+);
+success!
+timestamp: 2012-05-08T12:38:08.733916
+CREATE TABLE employee_login_detail(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    employee_code CHAR(512),
+    employee_email CHAR(512),
+    employee_name CHAR(512),
+    employee_login_date CHAR(512),
+    employee_login_time CHAR(512),
+    employee_logout_date CHAR(512),
+    employee_logout_time CHAR(512),
+    total_minutes CHAR(512),
+    toal_hours CHAR(512),
+    ip_address CHAR(512)
+);
+success!
+timestamp: 2012-05-08T12:38:08.804791
+CREATE TABLE personal_information(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    employee_code CHAR(512),
+    email CHAR(512),
+    date_of_birth DATE,
+    gender CHAR(512),
+    marital_status CHAR(512),
+    blood_group CHAR(512),
+    mobile INTEGER,
+    phone INTEGER,
+    present_address TEXT,
+    permanent_address TEXT,
+    citizenship CHAR(512),
+    state CHAR(512),
+    passport_no CHAR(512),
+    bank_account_no INTEGER,
+    pan_card_no CHAR(512)
+);
+success!
+timestamp: 2012-05-08T12:38:08.873648
+CREATE TABLE qualification(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    employee_code CHAR(512),
+    email CHAR(512),
+    university CHAR(512),
+    name_of_course CHAR(512),
+    specification CHAR(512),
+    grade CHAR(512),
+    percentage CHAR(512),
+    completion_year DATE
+);
+success!
+timestamp: 2012-05-08T12:38:08.956261
+CREATE TABLE document(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    employee_code CHAR(512),
+    email CHAR(512),
+    document_description CHAR(512),
+    document_upload CHAR(512)
+);
+success!
+timestamp: 2012-05-08T12:38:09.026132
+CREATE TABLE image(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    employee_code CHAR(512),
+    email CHAR(512),
+    image CHAR(512)
+);
+success!
+timestamp: 2012-05-08T12:38:09.096029
+CREATE TABLE holiday_list(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    holiday_date DATE,
+    holiday_name CHAR(512),
+    remarks TEXT
+);
+success!
+timestamp: 2012-05-08T12:38:09.179975
+CREATE TABLE apply_leave(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    employee_code CHAR(512),
+    email CHAR(512),
+    name CHAR(512),
+    leave_type CHAR(512),
+    from_leave DATE,
+    to_leave DATE,
+    total_day INTEGER,
+    reason_for_leave TEXT,
+    reporting_manager CHAR(512),
+    approved_by CHAR(512),
+    status CHAR(512)
+);
+success!
+timestamp: 2012-05-08T12:38:09.250167
+CREATE TABLE employee_leave(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    employee_code CHAR(512),
+    email CHAR(512),
+    taken_vacation_leave INTEGER,
+    taken_medical_leave INTEGER,
+    taken_casual_leave INTEGER,
+    left_vacation_leave INTEGER,
+    left_medical_leave INTEGER,
+    left_casual_leave INTEGER
+);
+success!
+timestamp: 2012-05-08T12:38:09.361383
+CREATE TABLE project(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    project_name CHAR(512) UNIQUE,
+    client_name CHAR(512),
+    company_name CHAR(512),
+    company_email CHAR(512),
+    practice_head INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    project_manager INTEGER REFERENCES auth_user(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2012-05-08T12:38:09.454814
+CREATE TABLE activity(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    project_name INTEGER REFERENCES project(id) ON DELETE CASCADE,
+    activity CHAR(512)
+);
+success!
+timestamp: 2012-05-08T12:38:09.525186
+CREATE TABLE assign_project(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    project_name INTEGER REFERENCES project(id) ON DELETE CASCADE,
+    organization_name CHAR(512),
+    department CHAR(512),
+    employee CHAR(512)
+);
+success!
+timestamp: 2012-05-08T12:38:09.617732
+CREATE TABLE activity_tracker(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    employee_code CHAR(512),
+    email CHAR(512),
+    project_name CHAR(512),
+    project_task CHAR(512),
+    task_description CHAR(512),
+    date DATE,
+    total_time INTEGER,
+    client_name CHAR(512),
+    company_name CHAR(512),
+    company_email CHAR(512),
+    practice_head CHAR(512),
+    project_manager CHAR(512)
+);
+success!

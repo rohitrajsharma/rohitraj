@@ -1,0 +1,25 @@
+{{left_sidebar_enabled,right_sidebar_enabled=True,True}}
+{{extend 'themislayout.html'}}
+<div id="contdoc">
+<h4>DASHBOARD</h4>
+</div>
+<div id="econtent">
+	<div class="anu">
+		<h4>Broadcasting Desk</h4>
+	</div>
+	<div class="eproject">
+		<h4>Project List</h4>
+	</div>
+	<div class="actively">
+		<h4>RSS Feed</h4>
+		<!-- Google Reader Element -->
+<div id="readershared"></div>
+<script type="text/javascript">window.GRC_m=function(d){return new GRC(d,document.getElementById("readershared").firstChild);};</script>
+<script type="text/javascript" src="http://www.google.com/reader/ui/publisher-en.js"></script>
+<script type="text/javascript" src="http://www.google.com/reader/public/javascript/user/01424889934985144508/state/com.google/broadcast?n=10&callback=GRC_p(%7Bc%3A%22blue%22%2Ct%3A%22Prakhar's%20Shared%20Items%22%2Cs%3A%22false%22%2Cn%3A%22true%22%2Cb%3A%22false%22%2Cw%3A%22true%22%7D)%3Bnew%20GRC_m&t="></script>
+	</div>
+	<div class="rssfeed">
+		<h4>Activity/Exercise</h4>
+		
+	</div>
+</div>

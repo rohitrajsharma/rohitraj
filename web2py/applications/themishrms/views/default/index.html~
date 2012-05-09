@@ -1,0 +1,69 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,True}}
+{{extend 'layout.html'}}
+<div id="sitecont">
+<div id="vtab">
+        <ul>
+            <li class="progession"></li>
+			<li class="niche"><img src="{{=URL('static','images/sidetab1.jpg')}}"></li>
+            <li class="home"><img src="{{=URL('static','images/sidetab2.jpg')}}"></li>
+            <li class="dynamic"><img src="{{=URL('static','images/sidetab3.jpg')}}"></li>
+            <li class="business"><img src="{{=URL('static','images/sidetab4.jpg')}}"></li>
+        </ul>
+        <div>
+            <div style= "color:#bd9f5d; font-size: 16pt;font-family: Garamond;">Themis Lexsol -<i style= "color:#000000; font-size: 16pt;font-family:BRUSH SCRIPT MT;"> Niche Above The Rest</i></div>
+            <p  style= "font-size: 12pt; color: #000000; font-family: Garamond; text-align: justify;">Themis Group ('Themis') is a 'one stop solution' for  all legal, tax and financial services. Our Group  comprises of Themis Lexsol Private Limited, a legal support services company; Themis Associates, a full service law firm providing pragmatic and solution driven legal services and Themis Lexsol Consulting LLP, a partnership firm with  special focus on  financial and tax consultancy. Our expertise and special focus on private equity industry makes us transaction specialists with a team of legal, financial and information technology professionals having inter-disciplinary skill-sets and strengths. We are a team committed to proactively service our clients with innovative solutions and integrity.</p>
+        </div>
+		<div>
+            <h4>Niche Above The Rest</h4>
+			<br>
+            While we do not claim to provide every legal service offerings under one umbrella, we do what we are best at. What makes us different is our approach, processes and use of technology to deliver high quality, cost effective and timely services to our clients. Our combined and collective legal, technological and financial industry experience helps us position as a 'one-stop shop' for all support associated with our service offerings. We ensure transparency during project scoping, and do not take our clients by surprise for unaccounted elements and costing of the project
+        </div>
+        <div>
+            <h4>Progression Through Innovation</h4>
+			<br>
+            <li>Identifying existing gaps and defects</li>
+			<li>Re-engineer clients existing systems and procedures with innovative solutions</li>
+			<li>Standardization of processes and procedures</li>
+			<li>Eliminating errors to derive near perfect results</li>
+			<li>Timely, constant and consistent performance</li>
+        </div>
+        <div>
+            <h4>Dynamic Experience</h4>
+			<br>
+			<li> A comprehensive service offerings - Transaction Life Cycle, business, intellectual property and litigation support services</li>
+			<li>Highly qualified and experienced leadership / management team</li>
+			<li>Varied and diverse industry experience - legal, financial, technology</li>
+			<li>A large and dynamic pool of talent</li>
+			<li>US and UK law trained attorneys</li>
+			<li>Ability to provide onsite, onshore, blended onshore-offshore support</li>
+			<li>Highly skilled, experienced lawyers with superior academic credentials</li>
+        </div>
+		<div>
+            <h4>Business Ethos</h4>
+			<br>
+            <li>Working as a trusted partner with our clients</li>
+			<li>Understanding client core values</li>
+			<li>Achieving service excellence in everything we undertake to do for our clients</li>
+			<li>Maintaining transparency and fair dealing with clients</li>
+			<li>Ensuring work and life balance for our employees</li>
+        </div>
+</div>
+<br>
+<div id="bottommenu">
+	<div class="col">
+	<h4>Innovate</h4>
+	<img width="100" height="150" src="{{=URL('static','images/innovate.gif')}}"  class="left" />
+	<p id="para" align="justify">Innovation is a key to our success and ultimate client satisfaction. We believe in innovating technologies, strategies, processes and our service models. We have internal processes which encourage new ideas concepts and innovations.</p>
+	</div>
+	<div class="col1">
+	<h4>Improve</h4>
+	<img width="100" height="150" src="{{=URL('static','images/improve.png')}}"  class="left" />
+	<p id="para" align="justify">At Themis improvement is a continuous activity. We improve upon our innovations, processes, technology and services constantly to be able to provide cutting edge solutions to our clients</p>
+	</div>
+	<div class="col2">
+	<h4>Integrate</h4>
+	<img width="100" height="150" src="{{=URL('static','images/Integrate.png')}}"  class="left" />
+	<p id="para" align="justify">We believe that our innovations and capabili- ties add value only when we integrate it with our client's requirements, processes and needs. At Themis Lexsol we are adept in ensuring a seamless transition from the current to the "ideal integrated new"</p>
+	</div>
+</div>
+</div>
